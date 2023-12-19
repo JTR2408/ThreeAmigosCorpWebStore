@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using ThreeAmigos.Products.Services.UnderCut;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,11 @@ builder.Services
         options.Audience = builder.Configuration["Auth:Audience"];
     });
 builder.Services.AddAuthorization();
+
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddSingleton<IUnderCutService, UnderCutServiceFake>();
+}
 
 var app = builder.Build();
 
