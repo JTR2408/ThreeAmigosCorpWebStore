@@ -5,7 +5,7 @@ namespace ThreeAmigos.Products.Data.Products;
 
 public class ProductContext : DbContext
 {
-    public DbSet<Product> Comments { get; set; } = null!;
+    public DbSet<Product> Products { get; set; } = null!;
 
     public ProductContext(DbContextOptions<ProductContext> options)
         : base(options)

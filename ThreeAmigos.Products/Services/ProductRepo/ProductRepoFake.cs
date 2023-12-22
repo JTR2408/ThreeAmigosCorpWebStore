@@ -1,5 +1,4 @@
 using System;
-using ThreeAmigos.Products.Services.ProductRepo;
 
 namespace ThreeAmigos.Products.Services.ProductRepo;
 
