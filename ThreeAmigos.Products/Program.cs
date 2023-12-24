@@ -55,12 +55,29 @@ builder.Services.AddDbContext<ProductContext>(options =>{
 if(builder.Environment.IsDevelopment()){
     builder.Services.AddSingleton<IUnderCutService, UnderCutServiceFake>();
 }
-else{}
+else{
+    builder.Services.AddHttpClient<IUnderCutService, UnderCutService>()
+        .AddPolicyHandler(GetRetryPolicy());
+}
 
 builder.Services.AddTransient<IProductsRepo, ProductRepo>();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope()){
+    var services = scope.ServiceProvider;
+    var env = services.GetRequiredService<IWebHostEnvironment>();
+    if (env.IsDevelopment()){
+        var context = services.GetRequiredService<ProductContext>();
+        try{
+            ProductsInitialiser.SeedTestData(context).Wait();
+        }
+        catch (Exception e){
+            var logger = services.GetRequiredService<ILogger<Program>>();
+            logger.LogDebug("Seeding test data failed.");
+        }
+    }
+}
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -76,3 +93,11 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+IAsyncPolicy<HttpResponseMessage> GetRetryPolicy(){
+    return HttpPolicyExtensions
+        .HandleTransientHttpError()
+        .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.NotFound)
+        .WaitAndRetryAsync(5, retryAttempt =>
+            TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
+}
