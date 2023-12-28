@@ -1,0 +1,25 @@
+0: DevPlan [Done]
+
+1: Product Details Servic:
+    IProductDetails
+    DetailsDTO
+    ProductDetailsService
+    DetailsFake
+
+2: UI
+    PreMadeWebApp [Done]
+
+3: UI Service Linking
+
+4: Display Data
+
+5: loose Search
+
+6: Users
+
+7: Funds
+
+8: Delete Accounts
+
+Optinal:
+    Filtering
