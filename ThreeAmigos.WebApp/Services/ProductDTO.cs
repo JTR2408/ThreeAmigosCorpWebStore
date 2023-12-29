@@ -1,6 +1,7 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace ThreeAmigos.Products.Services.UnderCut;
+namespace ThreeAmigos.WebApp.Services;
 
 public class ProductDto
 {
