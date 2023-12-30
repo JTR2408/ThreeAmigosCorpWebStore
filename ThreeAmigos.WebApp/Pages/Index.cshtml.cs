@@ -12,23 +12,17 @@ namespace ThreeAmigos.WebApp.Pages
 {
     private readonly IProductService _productService;
 
-    public IndexModel(IProductService productService)
-    {
+    public IndexModel(IProductService productService){
         _productService = productService;
     }
 
     public List<ProductDto> Products { get; private set; }
 
-    public async Task OnGetAsync()
-    {
-        try
-        {
-            // Fetch product data using ProductService
+    public async Task OnGetAsync(){
+        try{
             Products = await _productService.GetProductDataAsync();
         }
-        catch (Exception ex)
-        {
-            // Handle exception
+        catch (Exception ex){
         }
     }
 }
