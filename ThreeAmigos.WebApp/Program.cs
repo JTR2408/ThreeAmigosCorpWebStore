@@ -2,7 +2,6 @@ using ThreeAmigos.WebApp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-﻿using Auth0.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,11 +11,6 @@ builder.Services.AddRazorPages();
 // Register ProductService as a transient service
 builder.Services.AddHttpClient<IProductService, ProductService>();
 
-// builder.Services.AddAuth0WebAppAuthentication(options =>
-// {
-//     options.Domain = builder.Configuration["Auth0:Domain"];
-//     options.ClientId = builder.Configuration["Auth0:ClientId"];
-// });
 
 builder.Services.AddHostedService<RefreshService>();
 
@@ -31,8 +25,6 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// app.UseAuthentication();
-// app.UseAuthorization();
 
 app.UseStaticFiles();
 
