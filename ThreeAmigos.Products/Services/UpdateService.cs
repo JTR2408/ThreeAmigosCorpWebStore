@@ -36,7 +36,7 @@ public class UpdateService : BackgroundService
             }
 
             // Wait for 5 minutes before executing the task again
-            await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+            await Task.Delay(TimeSpan.FromMinutes(5), stoppingToken);
         }
     }
 }
