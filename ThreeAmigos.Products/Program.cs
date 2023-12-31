@@ -63,8 +63,6 @@ else{
 
 builder.Services.AddTransient<IProductsRepo, ProductRepo>();
 
-builder.Services.AddHostedService<UpdateService>();
-
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope()){
