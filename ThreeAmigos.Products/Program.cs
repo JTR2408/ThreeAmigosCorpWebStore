@@ -8,6 +8,7 @@ using ThreeAmigos.Products.Services.UnderCut;
 using Polly;
 using Polly.Extensions.Http;
 using ThreeAmigos.Products.Services.ProductRepo;
+using ThreeAmigos.Products.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -61,6 +62,8 @@ else{
 }
 
 builder.Services.AddTransient<IProductsRepo, ProductRepo>();
+
+builder.Services.AddHostedService<UpdateService>();
 
 var app = builder.Build();
 
