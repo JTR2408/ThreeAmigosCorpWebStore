@@ -8,7 +8,7 @@ namespace ThreeAmigos.WebApp.Services{
     public class RefreshService : BackgroundService{
         private readonly ILogger<RefreshService> _logger;
         private readonly IProductService _productService;
-        private const int RefreshIntervalInMinutes = 1;
+        private const int RefreshIntervalInMinutes = 5;
 
         public RefreshService(IProductService productService, ILogger<RefreshService> logger){
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));
