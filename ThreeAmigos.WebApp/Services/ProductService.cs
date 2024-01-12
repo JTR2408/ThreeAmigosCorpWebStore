@@ -23,14 +23,14 @@ namespace ThreeAmigos.WebApp.Services;
     public async Task<List<ProductDto>> GetProductDataAsync(){
         var tokenClient = _clientFactory.CreateClient();
 
-        var authBaseAddress = _configuration["AuthO:Authority"];
+        var authBaseAddress = _configuration["Auth:Authority"];
         tokenClient.BaseAddress = new Uri(authBaseAddress);
 
         var tokenParams = new Dictionary<string, string> {
             { "grant_type", "client_credentials" },
-            { "client_id", _configuration["AuthO:ClientId"] },
-            { "client_secret", _configuration["AuthO:ClientSecret"] },
-            { "audience", _configuration["AuthO:Audience"] },
+            { "client_id", _configuration["Auth:ClientId"] },
+            { "client_secret", _configuration["Auth:ClientSecret"] },
+            { "audience", _configuration["Auth:Audience"] },
         };
         var tokenForm = new FormUrlEncodedContent(tokenParams);
         var tokenResponse = await tokenClient.PostAsync("/oauth/token", tokenForm);
@@ -45,7 +45,7 @@ namespace ThreeAmigos.WebApp.Services;
         client.DefaultRequestHeaders.Authorization = 
                     new AuthenticationHeaderValue("Bearer", tokenInfo?.access_token);
             try{
-            var url = "https://threeamigoscorpproducts.azurewebsites.net/debug/undercut";
+            var url = _configuration["Services:BaseURL"] + "/debug/undercut";
 
             var response = await client.GetAsync(url);
             

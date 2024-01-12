@@ -13,13 +13,12 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpClient<IProductService, ProductService>();
 builder.Services.AddTransient<IProductService, ProductService>();
 
-builder.Services.AddHostedService<RefreshService>();
-
 builder.Services.AddAuth0WebAppAuthentication(options => {
-    options.Domain = builder.Configuration["AuthO:Domain"];
-    options.ClientId = builder.Configuration["AuthO:ClientId"];
+    options.Domain = builder.Configuration["Auth:Domain"];
+    options.ClientId = builder.Configuration["Auth:ClientId"];
 });
 
+builder.Services.AddHostedService<RefreshService>();
 
 var app = builder.Build();
 
