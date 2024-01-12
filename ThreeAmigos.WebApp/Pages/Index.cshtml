@@ -23,7 +23,10 @@
                 <th>Brand Id</th>
                 <th>Category</th>
                 <th>Category Id</th>
+                @if(User.Identity.IsAuthenticated){
                 <th>In Stock</th>
+                }
+               
             </tr>
         </thead>
         <tbody>
@@ -38,7 +41,10 @@
                 <td>@product.BrandId</td>
                 <td>@product.CategoryName</td>
                 <td>@product.CategoryId</td>
+                @if(User.Identity.IsAuthenticated){
                 <td>@(product.InStock ? "Yes" : "No")</td>
+                }
+                
             </tr>
         }
     }

@@ -1,4 +1,6 @@
-﻿namespace ThreeAmigos.WebApp.Models;
+﻿using System;
+
+namespace ThreeAmigos.WebApp.Models;
 
 public class UserProfileViewModel
 {

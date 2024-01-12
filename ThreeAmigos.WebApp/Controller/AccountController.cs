@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ThreeAmigos.WebApp.Controller;
+using ThreeAmigos.WebApp.Models;
 
 namespace ThreeAmigos.WebApp.Controller;
 
@@ -35,4 +35,5 @@ public class AccountController : ControllerBase
         await HttpContext.SignOutAsync(
             CookieAuthenticationDefaults.AuthenticationScheme);
     }
+
 }
