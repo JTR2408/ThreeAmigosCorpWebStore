@@ -13,4 +13,8 @@ public class ProductDto{
     public string CategoryName { get; set; } = string.Empty;
     public int CategoryId { get; set; }
     public bool InStock { get; set; }
+
+    public float PlusPrice{
+        get{ return Price * 1.1f; }
+    }
 }

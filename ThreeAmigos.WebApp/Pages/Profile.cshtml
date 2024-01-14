@@ -9,5 +9,8 @@
 <div>
     <p>Name: @Model.User.Identity.Name</p>
     <p>Email: @Model.UserProfile.EmailAddress</p>
-    <p>Profile Image: @Model.UserProfile.ProfileImage</p>
+    <div>
+        <img src= @Model.UserProfile.ProfileImage>
+    </div>
+    <P>Funds: @Model.UserProfile.Funds</P>
 </div>

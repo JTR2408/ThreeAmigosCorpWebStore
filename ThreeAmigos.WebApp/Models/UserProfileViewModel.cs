@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ThreeAmigos.WebApp.Models;
 
@@ -9,4 +10,6 @@ public class UserProfileViewModel
     public string Name { get; set; }
 
     public string ProfileImage { get; set; }
+
+    public double Funds {get; set;}
 }
