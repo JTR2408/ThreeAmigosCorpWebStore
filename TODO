@@ -1,31 +1,13 @@
-0: DevPlan [Done]
-
-1: Product Details Servic:  [Done]
-    IProductDetails
-    DetailsDTO
-    ProductDetailsService
-    DetailsFake
-
-2: UI
-    PreMadeWebApp [Done]
-
-3: UI Service Linking [Done]
-
-4: Display Data [Done]
-
-5: loose Search [Done]
-
-6: Users
-
 7: Funds
 
 8: Delete Accounts
 
+10% add on
+
+once perday update
+
+update users
+
+
+
 9: Testing
-
-Optinal:
-    Filtering
-
-
-
-    Test

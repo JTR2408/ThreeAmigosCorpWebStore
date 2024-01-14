@@ -1,5 +1,4 @@
 {
-    "appService.defaultWebAppToDeploy": "/subscriptions/fa4e9d04-4fb0-4edf-80ac-259250b247a5/resourceGroups/ThreeAmigosCorp/providers/Microsoft.Web/sites/ThreeAmigosWeb",
-    "appService.deploySubpath": "ThreeAmigos.WebApp\\bin\\pub"
+
 
 }
