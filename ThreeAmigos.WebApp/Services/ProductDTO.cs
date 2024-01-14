@@ -15,6 +15,6 @@ public class ProductDto{
     public bool InStock { get; set; }
 
     public float PlusPrice{
-        get{ return Price * 1.1f; }
+        get{ return (float)Math.Round(Price * 1.1f,2); }
     }
 }
