@@ -1,16 +1,52 @@
 @page
 @model ThreeAmigos.WebApp.Pages.ProfileModel
 @{
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = "User Profile";
 }
 
-<h2>@ViewData["Title"]</h2>
-
-<div>
-    <p>Name: @Model.User.Identity.Name</p>
-    <p>Email: @Model.UserProfile.EmailAddress</p>
-    <div>
-        <img src= @Model.UserProfile.ProfileImage>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="@Model.UserProfile.ProfileImage" alt="Profile Image" class="img-fluid rounded-circle" />
+                        </div>
+                        <div class="col-md-6">
+                            <h2>@ViewData["Title"]</h2>
+                            <h3>Username: @Model.UserProfile.Name</h3>
+                            <p><i class="glyphicon glyphicon-envelope"></i> Email: @Model.UserProfile.EmailAddress</p>
+                            <p><i class="glyphicon glyphicon-envelope"></i> Billing Address: 
+                                @if (Model.UserProfile.billingAddress == null){
+                                    <span>Edit profile to add address</span>
+                                }
+                                else{
+                                    <span>@Model.UserProfile.billingAddress</span>
+                                }
+                            </p>
+                            <p> <i class="glyphicon glyphicon-envelope"></i> Phone Number: 
+                                @if (Model.UserProfile.phoneNumber == null){
+                                    <span>Edit profile to add phone number</span>
+                                }
+                                else{
+                                    <span>@Model.UserProfile.phoneNumber</span>
+                                }
+                            </p>
+                            <p>Funds: @Model.UserProfile.Funds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <P>Funds: @Model.UserProfile.Funds</P>
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <a href="@Url.Action("EditProfile", "Account")" class="btn btn-primary">Edit Profile</a>
+            @using (Html.BeginForm("DeleteProfile", "Account", FormMethod.Post, new { onsubmit = "return confirm('Are you sure you want to delete your profile?');" }))
+            {
+                <button type="submit" class="btn btn-danger ml-2">Delete Profile</button>
+            }
+        </div>
+    </div>
 </div>

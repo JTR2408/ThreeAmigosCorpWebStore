@@ -12,4 +12,8 @@ public class UserProfileViewModel
     public string ProfileImage { get; set; }
 
     public double Funds {get; set;}
+
+    public string phoneNumber {get; set;}
+
+    public string billingAddress {get;set;}
 }

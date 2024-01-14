@@ -14,6 +14,9 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpClient<IProductService, ProductService>();
 builder.Services.AddTransient<IProductService, ProductService>();
 
+builder.Services.AddHttpClient<IUserService, UserService>();
+builder.Services.AddTransient<IUserService, UserService>();
+
 builder.Services.AddAuth0WebAppAuthentication(options => {
     options.Domain = builder.Configuration["Auth:Domain"];
     options.ClientId = builder.Configuration["Auth:ClientId"];
