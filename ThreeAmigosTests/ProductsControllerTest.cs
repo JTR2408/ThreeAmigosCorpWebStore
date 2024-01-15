@@ -4,34 +4,33 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
 using ThreeAmigos.Products.Controllers;
-using ThreeAmigos.Products.Services.ProductsRepo;
-using ThreeAmigos.Products.Services.UnderCutters;
+using ThreeAmigos.Products.Services.UnderCut;
 
 namespace ThreeAmigosTests;
 
 [TestClass]
 public class ProdctsControllerTests
 {
-        private DebugController _debugController;
-        private Mock<ILogger<DebugController>> _loggerMock;
+        private ProductsController _productsController;
+        private Mock<ILogger<ProductsController>> _loggerMock;
         private Mock<IUnderCutService> _underCutServiceMock;
 
         [TestInitialize]
         public void Setup()
         {
-            _loggerMock = new Mock<ILogger<DebugController>>();
-            _underCuttersServiceMock = new Mock<IUnderCuttersService>();
-            _debugController = new DebugController(_loggerMock.Object, _underCutServiceMock.Object);
+            _loggerMock = new Mock<ILogger<ProductsController>>();
+            _underCutServiceMock = new Mock<IUnderCutService>();
+            _productsController = new ProductsController(_loggerMock.Object, _underCutServiceMock.Object);
         }
 
         [TestMethod]
-        public async Task UnderCuttersTest()
+        public async Task UnderCutTest()
         {
             var expectedProducts = new List<ProductDto>();
-            _underCuttersServiceMock.Setup(c => c.GetProductsAsync())
+            _underCutServiceMock.Setup(c => c.GetProductsAsync())
             .Returns(Task.FromResult<IEnumerable<ProductDto>>(expectedProducts));
 
-            var result = await _debugController.UnderCutters();
+            var result = await _productsController.UnderCut();
 
             Assert.IsInstanceOfType(result, typeof(OkObjectResult));
             var okResult = (OkObjectResult)result;

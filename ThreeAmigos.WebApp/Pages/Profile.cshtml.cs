@@ -30,12 +30,13 @@ namespace ThreeAmigos.WebApp.Pages;
         string profilePicture = userInfo.picture;
 
         string billingAddress = userInfo?.user_metadata?.billing_address;
-        string phoneNumber = userInfo?.user_metadata?.contact_number;
+        string phoneNumber = userInfo?.user_metadata?.number;
 
 
             Random r = new Random();
             int fundRange = 100;
             double rFund = r.NextDouble()* fundRange;
+            double roundFund = (double)Math.Round(rFund,2);
 
             UserProfile = new UserProfileViewModel()
             {
@@ -44,9 +45,8 @@ namespace ThreeAmigos.WebApp.Pages;
                 ProfileImage = profilePicture,
                 billingAddress = billingAddress,
                 phoneNumber = phoneNumber,
-                Funds = rFund
+                Funds = roundFund
             };
         }
-
 
     }

@@ -33,7 +33,7 @@
                                     <span>@Model.UserProfile.phoneNumber</span>
                                 }
                             </p>
-                            <p>Funds: @Model.UserProfile.Funds</p>
+                            <p>Funds: £@Model.UserProfile.Funds</p>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
     </div>
     <div class="row mt-3">
         <div class="col-md-12">
-            <a href="@Url.Action("EditProfile", "Account")" class="btn btn-primary">Edit Profile</a>
+            <a class="nav-link text-dark" asp-page="/EditProfile">Edit Profile</a>
             @using (Html.BeginForm("DeleteProfile", "Account", FormMethod.Post, new { onsubmit = "return confirm('Are you sure you want to delete your profile?');" }))
             {
                 <button type="submit" class="btn btn-danger ml-2">Delete Profile</button>

@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ThreeAmigos.Products\ThreeAmigos.Products.csproj" />
-    <ProjectReference Include="..\ThreeAmigos.WebApp\ThreeAmigos.WebApp.csproj" />
   </ItemGroup>
 
 </Project>

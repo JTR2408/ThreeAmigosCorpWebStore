@@ -16,4 +16,5 @@ public class UserProfileViewModel
     public string phoneNumber {get; set;}
 
     public string billingAddress {get;set;}
+
 }
