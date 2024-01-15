@@ -10,7 +10,7 @@ using ThreeAmigos.Products.Services.UnderCutters;
 namespace ThreeAmigosTests;
 
 [TestClass]
-public class ProdctControllerTests
+public class ProdctsControllerTests
 {
         private DebugController _debugController;
         private Mock<ILogger<DebugController>> _loggerMock;
