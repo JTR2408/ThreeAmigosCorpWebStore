@@ -1,13 +1,6 @@
 using System.Net.Http.Headers;
-using System.Net.Http.Json;
-using Auth0.AspNetCore.Authentication;
 using Newtonsoft.Json;
-using ThreeAmigos.WebApp.Services;
-using ThreeAmigos.WebApp.Models;
-using Auth0.ManagementApi;
 using Newtonsoft.Json.Linq;
-using Auth0.ManagementApi.Models.Actions;
-using Auth0.ManagementApi.Models.Grants;
 using System.Text;
 
 namespace ThreeAmigos.WebApp.Services;

@@ -1,9 +1,5 @@
 using ThreeAmigos.WebApp.Services;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using System;
 using Auth0.AspNetCore.Authentication;
-
 
 var builder = WebApplication.CreateBuilder(args);
 

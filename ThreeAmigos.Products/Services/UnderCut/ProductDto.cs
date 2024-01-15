@@ -1,6 +1,3 @@
-using System;
-using System.ComponentModel.DataAnnotations;
-
 namespace ThreeAmigos.Products.Services.UnderCut;
 
 public class ProductDto

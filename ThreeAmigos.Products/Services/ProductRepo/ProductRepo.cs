@@ -1,4 +1,3 @@
-using System;
 using Microsoft.EntityFrameworkCore;
 using ThreeAmigos.Products.Data.Products;
 

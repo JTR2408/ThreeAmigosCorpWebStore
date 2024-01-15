@@ -1,7 +1,3 @@
-using System;
-using System.Net;
-using Microsoft.AspNetCore.Mvc;
-
 namespace ThreeAmigos.Products.Services.UnderCut;
 
 public class UnderCutService : IUnderCutService

@@ -1,5 +1,3 @@
-using System;
-
 namespace ThreeAmigos.Products.Services.UnderCut;
 
 public class UnderCutServiceFake : IUnderCutService{

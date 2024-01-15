@@ -1,7 +1,4 @@
-﻿using System;
-using System.Security.Cryptography.X509Certificates;
-
-namespace ThreeAmigos.WebApp.Models;
+﻿namespace ThreeAmigos.WebApp.Models;
 
 public class UserProfileViewModel
 {

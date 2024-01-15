@@ -1,5 +1,3 @@
-using System;
-
 namespace ThreeAmigos.Products.Data.Products;
 
 public static class ProductsInitialiser{

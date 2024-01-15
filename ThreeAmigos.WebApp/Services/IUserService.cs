@@ -1,5 +1,3 @@
-using System;
-
 namespace ThreeAmigos.WebApp.Services;
 
 public interface IUserService{

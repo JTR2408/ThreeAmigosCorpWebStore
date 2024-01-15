@@ -1,6 +1,3 @@
-using System;
-using System.ComponentModel.DataAnnotations;
-
 namespace ThreeAmigos.WebApp.Services;
 
 public class ProductDto{

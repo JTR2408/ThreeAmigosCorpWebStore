@@ -1,9 +1,5 @@
 using System.Net.Http.Headers;
-using Auth0.AspNetCore.Authentication;
 using Newtonsoft.Json;
-using ThreeAmigos.WebApp.Services;
-using Newtonsoft.Json;
-
 
 namespace ThreeAmigos.WebApp.Services;
 

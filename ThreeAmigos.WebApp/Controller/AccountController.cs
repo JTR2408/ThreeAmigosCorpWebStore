@@ -1,11 +1,9 @@
-﻿﻿using System.Security.Claims;
-using Auth0.AspNetCore.Authentication;
+﻿﻿using Auth0.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using ThreeAmigos.WebApp.Models;
 using ThreeAmigos.WebApp.Services;
 
 namespace ThreeAmigos.WebApp.Controller;

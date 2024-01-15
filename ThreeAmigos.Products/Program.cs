@@ -1,22 +1,14 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
 using ThreeAmigos.Products.Data.Products;
 using ThreeAmigos.Products.Services.UnderCut;
 using Polly;
 using Polly.Extensions.Http;
-using ThreeAmigos.Products.Services.ProductRepo;
-using ThreeAmigos.Products.Services;
-
+using ThreeAmigos.Products.Services.ProductRepo;;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services

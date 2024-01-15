@@ -1,9 +1,3 @@
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-using ThreeAmigos.WebApp.Services;
-
 namespace ThreeAmigos.WebApp.Services{
     public class RefreshService : BackgroundService{
         private readonly ILogger<RefreshService> _logger;

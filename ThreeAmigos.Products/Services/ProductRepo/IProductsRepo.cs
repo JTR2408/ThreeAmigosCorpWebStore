@@ -1,5 +1,3 @@
-using System;
-
 namespace ThreeAmigos.Products.Services.ProductRepo;
 
 public interface IProductsRepo{
