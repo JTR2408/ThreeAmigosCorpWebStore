@@ -45,7 +45,7 @@ namespace ThreeAmigos.WebApp.Services;
         client.DefaultRequestHeaders.Authorization = 
                     new AuthenticationHeaderValue("Bearer", tokenInfo?.access_token);
             try{
-            var url = _configuration["Services:BaseURL"] + "/debug/undercut";
+            var url = _configuration["Services:BaseURL"] + "/products/undercut";
 
             var response = await client.GetAsync(url);
             
